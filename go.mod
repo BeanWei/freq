@@ -5,10 +5,16 @@ go 1.18
 require (
 	entgo.io/ent v0.11.2
 	github.com/cloudwego/hertz v0.2.1
+	github.com/go-redis/redis/v8 v8.11.5
 	github.com/jackc/pgx/v5 v5.0.0-beta.1
 	github.com/spf13/viper v1.12.0
 	github.com/urfave/cli/v2 v2.11.1
 	github.com/yitter/idgenerator-go v1.3.1
+)
+
+require (
+	github.com/robfig/cron/v3 v3.0.1 // indirect
+	golang.org/x/time v0.0.0-20191024005414-555d28b269f0 // indirect
 )
 
 require (
@@ -18,9 +24,11 @@ require (
 	github.com/bytedance/go-tagexpr/v2 v2.9.2 // indirect
 	github.com/bytedance/gopkg v0.0.0-20220413063733-65bf48ffb3a7 // indirect
 	github.com/bytedance/sonic v1.3.0 // indirect
+	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20211019084208-fb5309c8db06 // indirect
 	github.com/cloudwego/netpoll v0.2.4 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
+	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
 	github.com/go-openapi/inflect v0.19.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
@@ -30,6 +38,7 @@ require (
 	github.com/hashicorp/hcl/v2 v2.10.0 // indirect
 	github.com/henrylee2cn/ameda v1.4.10 // indirect
 	github.com/henrylee2cn/goutil v0.0.0-20210127050712-89660552f6f8 // indirect
+	github.com/hibiken/asynq v0.23.0
 	github.com/jackc/pgpassfile v1.0.0 // indirect
 	github.com/jackc/pgservicefile v0.0.0-20200714003250-2b9c44734f2b // indirect
 	github.com/klauspost/cpuid/v2 v2.0.9 // indirect

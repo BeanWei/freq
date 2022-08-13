@@ -27,12 +27,9 @@ type conf struct {
 		Debug bool   `yaml:"debug"`
 	} `yaml:"database"`
 	Redis struct {
-		Addr         string `toml:"addr"`
-		Pass         string `toml:"pass"`
-		Db           int    `toml:"db"`
-		MaxRetries   int    `toml:"maxRetries"`
-		PoolSize     int    `toml:"poolSize"`
-		MinIdleConns int    `toml:"minIdleConns"`
+		Addr string `toml:"addr"`
+		Pass string `toml:"pass"`
+		DB   int    `toml:"db"`
 	} `toml:"redis"`
 }
 

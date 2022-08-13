@@ -8,29 +8,29 @@ import (
 )
 
 var (
-	rdb    *sql.DB
-	wdb    *sql.DB
+	dbr    *sql.DB
+	dbw    *sql.DB
 	dbOnce sync.Once
 )
 
 func DB(read ...bool) *sql.DB {
 	dbOnce.Do(func() {
 		var err error
-		wdb, err = sql.Open("pgx", Cfg().Database.Write)
+		dbw, err = sql.Open("pgx", Cfg().Database.Write)
 		if err != nil {
 			panic(err)
 		}
 		if Cfg().Database.Read != "" {
-			rdb, err = sql.Open("pgx", Cfg().Database.Read)
+			dbr, err = sql.Open("pgx", Cfg().Database.Read)
 			if err != nil {
 				panic(err)
 			}
 		}
 	})
-	if len(read) > 0 && read[0] && rdb != nil {
-		return rdb
+	if len(read) > 0 && read[0] && dbr != nil {
+		return dbr
 	}
-	return wdb
+	return dbw
 }
 
 func RDB() *sql.DB {
@@ -42,11 +42,11 @@ func WDB() *sql.DB {
 }
 
 func DbClose() error {
-	if err := wdb.Close(); err != nil {
+	if err := dbw.Close(); err != nil {
 		return err
 	}
-	if rdb != nil {
-		return rdb.Close()
+	if dbr != nil {
+		return dbr.Close()
 	}
 	return nil
 }
