@@ -8,3 +8,9 @@
 
 # Project runtime log
 logs/*.log
+
+# ent gen code
+**/ent/*
+!**/ent/schema
+!**/ent/entc.go
+!**/ent/generate.go
