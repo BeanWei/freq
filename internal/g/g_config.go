@@ -21,6 +21,19 @@ type conf struct {
 	Server struct {
 		Address string `yaml:"address"`
 	} `yaml:"server"`
+	Database struct {
+		Read  string `yaml:"read"`
+		Write string `yaml:"write"`
+		Debug bool   `yaml:"debug"`
+	} `yaml:"database"`
+	Redis struct {
+		Addr         string `toml:"addr"`
+		Pass         string `toml:"pass"`
+		Db           int    `toml:"db"`
+		MaxRetries   int    `toml:"maxRetries"`
+		PoolSize     int    `toml:"poolSize"`
+		MinIdleConns int    `toml:"minIdleConns"`
+	} `toml:"redis"`
 }
 
 func Cfg() *conf {
